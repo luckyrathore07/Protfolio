@@ -1,0 +1,1034 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+ </head>
+ <style>
+    @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro";
+        scroll-behavior: smooth;
+    }
+    :root{
+        --bgOrang:#e84949;
+    }
+    #wrapper{
+        height: 100vh;
+         
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .container{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .nav-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+    a{
+        text-decoration: none;
+        
+        color: black;
+    }
+    .nav-item{
+        display: flex;
+         gap: 2rem;
+         padding: 0 4em;
+        
+    }
+    .nav-item div{
+        cursor: pointer;
+         font-size: 20px;
+         font-weight: 500;
+    }
+    .logo{
+        width: 80px;
+    }
+    .nav-logo{
+        display: flex;
+        align-items: center;
+    }
+    .text{
+        margin-left: -1.2rem;
+        font-size: 28px;
+
+    }
+    .nav-item div:hover{
+        transition: 0.8s;
+        font-weight: 800;
+    }
+    
+    .heading{
+        font-size: 35px;
+        font-weight: 500;
+        color: #343d68;
+    }
+    .role{
+        color:#4e45d5 ;
+        font-weight: 800;
+    }
+    .faded-text{
+        user-select: none;
+        font-size:7em;
+        color: rgb(231,231,231);
+        bottom: -16%;
+        left: -5%;
+        font-weight: bold;
+        transition: all 3s;
+    }
+    .hero-section{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        margin: 4rem auto;
+        padding-bottom: 8rem;
+    }
+    .leftpart{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+
+    }
+    .sub-heading{
+        font-size: 45px;
+        line-height: 45px;
+    }
+.discribtion{
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 500;
+}
+.btn{
+    background-color:   var(--bgOrang);
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+    z-index: 1;
+}
+.btn::before{
+    content: "";
+    background-color: #fff;
+    transform-origin: left;
+    transform: scaleX(0);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.8s;
+    z-index: -1;
+}
+.btn:hover{
+    border: solid 3px  var(--bgOrang);
+    color: black;
+}
+.btn:hover::before{
+    transform: scaleX(1);
+}
+.rightpart{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.user-img{
+    padding: 2.5rem;
+    filter: grayscale(1);
+    animation: scale-img 5s linear infinite  ;
+    transition: all 1s;
+}
+.user-img img{
+    z-index: -12;
+}
+@keyframes scale-img{
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    50%{
+        filter: grayscale(1);
+        transform: scale(1.1);
+        box-shadow: 3px 3px 10px black;
+    }
+
+    100%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+}
+.icon-dots{
+    z-index: 9;
+    bottom: -1.9rem;
+    right: 0;
+    animation: dot 5s linear infinite;
+}
+@keyframes dot{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.icon-cube{
+    z-index: 9;
+    top: -0.8em;
+    right: 1em;
+    animation: cube 5s linear infinite;
+}
+@keyframes cube{
+
+  0%{  
+    transform: translateY(0px) rotateY(0deg);
+     
+  }
+  50%{  
+    transform: translateY(-12px) rotateY(180deg);
+     
+  }
+  100%{  
+    transform: translateY(0px) rotateY(360deg);
+    
+  }
+    }
+    .icon-circle{
+    z-index: 9;
+    left: 0;
+    bottom: 0;
+    animation: circle 5s linear infinite;
+}
+@keyframes circle{
+     
+    50%{
+        left: 5%;
+        bottom: 10%;
+    }
+     
+}
+.icon-zigzag{
+    z-index: 9;
+    left: -0.3em;
+    top: 1.5em;
+    animation: zigzag 5s linear infinite;
+}
+@keyframes zigzag{
+     
+     50%{
+         left: 5%;
+        top: 2%;
+     }
+      
+ }
+ .icon-plus{
+    z-index: 9;
+    left: 50%;
+    top: -0.8rem;
+    animation: plus 5s linear infinite;
+}
+@keyframes plus{
+     
+     50%{
+         left: 48%;
+        top: 3%;
+     }
+      
+ }
+ .project-section{
+     background-color: rgb(231,231,231);
+     margin-top: 4rem; 
+ }
+ .page-header{
+
+    color: var(--bgOrang);
+    font-size: 90px;
+    text-align:center ;
+    padding-top: 30px;
+
+
+ }
+ .project-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+ }
+.project{
+    width: 90%;
+    height: 550px;
+    background-image: url(projects/Project2.png);
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+}
+.project::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #1f1f1f9a;
+    z-index: 0;
+}
+.project::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 0%;
+    background:linear-gradient(45deg,#343d68,#343d68be,#343d687c);
+    transition: all 0.4s;
+   z-index: 1;
+}
+.project:hover:before{
+    width: 100%;
+}
+.project-number{
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600px; 
+    color:rgb(255,255,255);
+    z-index: 10;
+    opacity: 0;
+}
+.project:hover .project-number{
+    opacity: 1;
+}
+
+.project-no-right{
+     right: -40px;
+    top: -45px;
+}
+.project-no-left{
+     left: -40px;
+    top: -45px;
+}
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 5;
+    gap: 1em;
+    width: 50%;
+     
+    transition: all 0.4s;
+}
+.img{
+    width: 40px;
+}
+.project:hover .project-content{
+    transform: scale(1.1);
+     
+}
+.project-content-left{
+    left: 10%;
+}
+.project-content-right{
+    right: 10%;
+}
+.project-heading{
+    font-size: 50px;
+    font-weight: bold;
+
+}
+.btn-grp{
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+.project-btn:hover{
+    border: none;
+}
+.project-btn{
+    border: none;
+}
+.icon{
+     cursor: pointer;
+     color: white;
+     font-size:35px ;
+     transition: all 0.4s;
+
+}
+.icon:hover{
+     color: var(--bgOrang);
+}
+#project-card1{
+    background-image: url(projects/Project1.png);
+}
+#project-card2{
+    margin-left: 120px;
+    background-image: url(projects/Project2.png);
+}
+#project-card3{
+    background-image: url(projects/Project3.png);
+}
+#project-card4{
+    margin-left: 120px;
+    background-image: url(projects/Project4.png);
+}
+
+.skill-container{
+    position: relative;
+    display: flex;
+    padding: 5rem 10rem;
+    margin: 10rem auto;
+    gap: 30px;
+    
+}
+
+.skill-container-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.skill-container-right{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    position: relative;
+    gap: 2rem;
+    justify-content: center;
+}
+ 
+.skill-fade-text{
+    font-size: 15em;
+    font-style: bold;
+     color: rgb(231, 231, 231);
+     bottom: -34.5%;
+     right: -3.5%;
+     position: absolute;
+     user-select: none;
+}
+
+.blob-vector{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform:translate(-50%,-50%) ;
+    animation: blobmove 3s linear 3s infinite  ;
+}
+
+@keyframes blobmove{
+    50%{
+        top: 54%;
+        left: 46%;
+    }
+}
+
+.skills-language-logo{
+    width: 90px;
+    transition: all 0.5s;
+}
+
+ #skills-languages-logo{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      width: 100%;
+
+ }
+ .skills-language-logo:hover{
+    transform: scale(1.2);
+ }
+
+ .skill-heading{
+    font-size: 50px;
+    font-style: bold;
+    color: var(--bgOrang);
+    line-height: 50px;
+
+ }
+ .caps{
+    font-size:90px ;
+ }
+ .skill-sub-heading{
+    margin-top: 1rem;
+    width: 85%;
+    text-align:justify ;
+ }
+
+ .contactus-container{
+    background-color: rgb(231, 231, 231);
+    width: 100%;
+ }
+ .contact-heading{
+    padding-top: 2rem;
+    font-size: 5em;
+    color: var(--bgOrang);
+
+ }
+ .contact-sub-heading{
+    margin-bottom: 1em;
+    font-size: 3em;
+    color: #343d68aa;
+    text-transform: capitalize;
+ }
+form{
+    display: flex;
+    gap: 30px;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+     margin: 0 auto;
+
+}
+.formfield{
+    height: 42px;
+    width: 100%;
+     border: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0 15px;
+    box-shadow: 2px 2px 10px #1f1f1f;
+
+}
+.formfield-textarea{
+    padding-top: 15px;
+    margin: 1rem 0;
+     height: auto;
+     font-size: 18px;
+}
+.submit-btn:hover{
+    scale: 0.9;
+    border: none;
+}
+.submit-btn{
+    border: none;
+    margin-bottom: 50px;
+}
+.submit-icon{
+    padding: 0 1rem;
+    font-size: 1.5rem;
+}
+footer{
+    background-color: #343d68;
+    margin-top: -1px;
+    padding: 5rem;
+    position: relative;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     
+}
+.footer-faded-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #535c87;
+    font-size: 4em;
+}
+.link-wrapper{
+    display: flex;
+    gap: 2rem;
+    margin-left: 8rem;
+     }
+.link-wrapper a{
+    color: white;
+    text-decoration: none;
+}
+.link-wrapper a:hover{
+    color: var(--bgOrang);
+    transition: all 0.3s;
+}
+.icon-wrapper{
+    display: flex;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+ 
+
+ </style>
+ <body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="nav-bar">
+                <div class="nav-logo">
+                    <img class="logo" src="userasset/NavLogo.jpg" alt="">
+                     <div class="text"> ohn Doe</div> 
+                </div>
+                <div class="nav-item">
+                   
+                        <div> <a href="#project">Projects</a></div>
+                        <div> <a href="#skill">skills</a></div>
+                        <div><a href="#contactme">Contact Me</a></div>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="hero-section">
+                <div class=" leftpart">
+                    <div class=" absolute faded-text">Lucky Rathore</div>
+                    <div class="heading">Hi! Lucky Rathore</div>
+                    <div class="sub-heading heading">I am a <span class="role"></span>
+                    </div>
+                    <div class="discribtion">I'm a software developer and here is my Portfolio website. Here you'll learn about my as a software developer. </div>
+                    <div>
+                        <button class="btn">Hire me</button>
+                    </div> 
+                </div>
+                <div class="rightpart">
+                    <div class="absolute icons icon-dots ">
+                        <img src="userasset/dots.png" alt="">
+                    </div>
+                    <div class="absolute icons icon-cube ">
+                        <img src="userasset/cube.png" alt="">
+                    </div>
+                    <div class="absolute icons icon-circle ">
+                        <img src="userasset/circle.png" alt="">
+                    </div>
+                    <div class="absolute icons icon-zigzag ">
+                        <img src="userasset/zigzags.png" alt="">
+                    </div>
+                    <div class="absolute icons icon-plus ">
+                        <img src="userasset/plus.png" alt="">
+                    </div>
+                    <div class="user-img ">
+                        <img src="userasset/2593.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section" id="project">
+            <div class="project-container">
+                <h1 class="page-header">Projects</h1>
+                <div class="project" id="project-card1">
+                    <div class="project-number project-no-right">01</div>
+                    <div class="project-content project-content-left"> 
+                        <div class="project-skill project-content-left">
+                            <img class="img" src="stack/HTML.png" alt="" />
+                            <img class="img" src="stack/Javascript.svg" alt="" />
+                            <img class="img" src="stack/Express.png" alt="" />
+                            <img
+                              class="img"
+                              src=" stack/NextJsCircle.png"
+                              alt=""
+                            />
+                            <img class="img" src="stack/Tailwind.png" alt="" />
+                            <img class="img" src="stack/NodeJs.svg" alt="" />
+                            <img class="img" src="stack/MongoDB.svg" alt="" />
+                            <img class="img" src="stack/Typescript.svg" alt="" />
+                            <img class="img" src="stack/Bootstrap.svg" alt="" />
+                            <img class="img" src="stack/HTML.png" alt="" />
+                        </div>
+
+                        
+                        
+                        <h2 class="project-heading">Tint & Orange</h2>
+                        <p>Its is a car modification copany which provide you sheets to
+                           protect your car from scratch</p>
+                        <div class="btn-grp">
+                           <button class="btn project-btn">Read More</button>
+                           <a href="">
+                               <i title="gitHubLink" class="fa-brands fa-github icon"></i>
+                           </a>
+                           <a href="">
+                               <i title="Live Link" class="fa-solid fa-link icon"></i>
+                           </a>
+                        </div>
+                    
+                     </div> 
+                </div>
+            
+
+             <div class="project" id="project-card2">
+                <div class="project-number project-no-left">02</div>
+                <div class="project-content project-content-right"> 
+                    <div class="project-skill">
+                        <img class="img" src="stack/HTML.png" alt="" />
+                        <img class="img" src="stack/Javascript.svg" alt="" />
+                        <img class="img" src="stack/Express.png" alt="" />
+                        <img
+                          class="img"
+                          src=" stack/NextJsCircle.png"
+                          alt=""
+                        />
+                        <img class="img" src="stack/Tailwind.png" alt="" />
+                        <img class="img" src="stack/NodeJs.svg" alt="" />
+                        <img class="img" src="stack/MongoDB.svg" alt="" />
+                        <img class="img" src="stack/Typescript.svg" alt="" />
+                        <img class="img" src="stack/Bootstrap.svg" alt="" />
+                        <img class="img" src="stack/HTML.png" alt="" />
+                    </div>
+                    
+
+                    <h2 class="project-heading">Tint & Orange</h2>
+                 <p>Its is a car modification copany which provide you sheets to
+                    protect your car from scratch</p>
+                 <div class="btn-grp">
+                    <button class="btn project-btn">Read More</button>
+                    <a href="">
+                        <i title="gitHubLink" class="fa-brands fa-github icon"></i>
+                    </a>
+                    <a href="">
+                        <i title="Live Link" class="fa-solid fa-link icon"></i>
+                    </a>
+                 </div> 
+                </div>
+                 
+             </div>
+
+             
+             <div class="project" id="project-card3">
+                <div class="project-number project-no-right">03</div>
+                <div class="project-content project-content-left"> 
+                    <div class="project-skill">
+                        <img class="img" src="stack/HTML.png" alt="" />
+                        <img class="img" src="stack/Javascript.svg" alt="" />
+                        <img class="img" src="stack/Express.png" alt="" />
+                        <img
+                          class="img"
+                          src=" stack/NextJsCircle.png"
+                          alt=""
+                        />
+                        <img class="img" src="stack/Tailwind.png" alt="" />
+                        <img class="img" src="stack/NodeJs.svg" alt="" />
+                        <img class="img" src="stack/MongoDB.svg" alt="" />
+                        <img class="img" src="stack/Typescript.svg" alt="" />
+                        <img class="img" src="stack/Bootstrap.svg" alt="" />
+                        <img class="img" src="stack/HTML.png" alt="" />
+                    </div>
+                    
+
+                    <h2 class="project-heading">Tint & Orange</h2>
+                 <p>Its is a car modification copany which provide you sheets to
+                    protect your car from scratch</p>
+                 <div class="btn-grp">
+                    <button class="btn project-btn">Read More</button>
+                    <a href="">
+                        <i title="gitHubLink" class="fa-brands fa-github icon"></i>
+                    </a>
+                    <a href="">
+                        <i title="Live Link" class="fa-solid fa-link icon"></i>
+                    </a>
+                 </div> 
+                </div>
+
+                
+                 
+                
+                     
+                 </div>
+                 <div class="project" id="project-card4">
+                <div class="project-number project-no-left">04</div>
+                <div class="project-content project-content-right"> 
+                    <div class="project-skill">
+                        <img class="img" src="stack/HTML.png" alt="" />
+                        <img class="img" src="stack/Javascript.svg" alt="" />
+                        <img class="img" src="stack/Express.png" alt="" />
+                        <img
+                          class="img"
+                          src=" stack/NextJsCircle.png"
+                          alt=""
+                        />
+                        <img class="img" src="stack/Tailwind.png" alt="" />
+                        <img class="img" src="stack/NodeJs.svg" alt="" />
+                        <img class="img" src="stack/MongoDB.svg" alt="" />
+                        <img class="img" src="stack/Typescript.svg" alt="" />
+                        <img class="img" src="stack/Bootstrap.svg" alt="" />
+                        <img class="img" src="stack/HTML.png" alt="" />
+                    </div>
+                    
+
+                    <h2 class="project-heading">Tint & Orange</h2>
+                 <p>Its is a car modification copany which provide you sheets to
+                    protect your car from scratch</p>
+                 <div class="btn-grp">
+                    <button class="btn project-btn">Read More</button>
+                    <a href="">
+                        <i title="gitHubLink" class="fa-brands fa-github icon"></i>
+                    </a>
+                    <a href="">
+                        <i title="Live Link" class="fa-solid fa-link icon"></i>
+                    </a>
+                 </div> 
+                </div>
+    
+                 
+                 
+
+                 
+                 
+                
+            </div>
+
+        </div>
+        </div>
+        
+
+        <div id="skill" class="skill-container">
+            <div class="skill-fade-text">Skills</div>
+            
+            <div class="skill-container-left">
+                <h2 class="skill-heading">
+                   <span class="caps">M</span>e and
+                   <br>
+                   MyTech Stack
+                </h2> 
+                <div class="skill-sub-heading">
+                    <p>
+                        Hi Everyone My name is John Doe I am a Full Stack Web Developer I
+                        have been working for last 3 Years and Currently I am working with
+                        a Budding Startup in USA and a full Time Freelancer. Currently I
+                        am working on NextJs and Making Beautiful UI-UX are my fey
+                        features Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        <br />
+                        <br />
+                        Non doloremque aspernatur, maiores voluptatum minus laudantium?
+                        Perspiciatis accusamus minima porro dolores necessitatibus, magni
+                        dolorem et qui veniam nulla sequi molestiae maxime. Lorem ipsum
+                        <br />
+                        <br />
+                        dolor sit amet consectetur adipisicing elit. Quis quidem quos
+                        ullam veritatis voluptates tenetur qui ipsa nulla culpa itaque?
+                      </p>
+                </div>
+            </div>
+
+           <div class="skill-container-right">
+             <img
+              class="blob-vector"
+              src="userAsset/blob vector.png"
+              alt=""
+             />
+              
+              <img
+                class="skills-language-logo"
+                src="stack/Bash.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Bootstrap.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/ChartJs.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/CSS.png"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Docker.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Express.png"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Vercel.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Typescript.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Graphql.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/HTML.png"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Javascript.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/K8s.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/MaterialUI.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/MongoDB.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Next.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/NextJsCircle.png"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/NodeJs.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/React.png"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Redux.svg"
+                alt=""
+              />
+              <img
+                class="skills-language-logo"
+                src=" stack/Saas.svg"
+                alt=""
+              />
+           </div>
+                
+            
+                
+           
+        </div>
+        
+         
+        <div id="contactme" class="contactus-container">
+              <div class="container">
+                <h1 class="contact-heading" >Contact me</h1>
+                <h3 class="contact-sub-heading">Question, throughts, or just want to say hello?</h3>
+                
+
+                <div class="contactus-form">
+                    <form action="">
+                    
+                      <input type="text" 
+                      class="formfield"
+                      placeholder="Enter your name"
+                      name="name"
+                      id=""
+                      > 
+                      
+                      <input type="email" 
+                      class="formfield"
+                      placeholder="Enter your email address"
+                      name="email"
+                      id=""
+                      >  
+
+                      <input type="text" 
+                      class="formfield"
+                      placeholder="Enter your subject"
+                      name="subject"
+                      id=""
+                      > 
+                      <textarea name="massage" 
+                      id="" 
+                      cols="30" 
+                      rows="10" 
+                      
+                      class="formfield formfield-textarea"
+                      placeholder="Enter your massage"></textarea>
+
+                      <div>
+                        <button type="submit" 
+                        class="btn submit-btn"
+                        name="subject"
+                        id="submit-btn">Send Message <i class="submit-icon fa-solid fa-paper-plane"></i></button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-faded-text">
+                        John Doe
+                       </div> 
+                       <div class="link-wrapper">
+                        <a href="linkedin.com/in/lucky-rathore-9a9058285">Projects</a>
+                        <a href="#">Skills</a>
+                        <a href="#">Conatct Me</a>
+                       </div>
+                       <div class="icon-wrapper">
+                        <a href="linkedin.com/in/lucky-rathore-9a9058285">
+                            <i class="fa-brands fa-linkedin icon"></i>
+                        </a>
+                         
+                         <i class="fa-brands fa-github icon"></i>
+                         <i class="fa-brands fa-twitter icon"></i>
+                         <i class="fa-brands fa-instagram icon"></i>
+                         <i class="fa-brands fa-envelope icon"></i>
+                       </div>
+                </div>
+               
+            </div>
+        </footer>
+
+       
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script
+      src="https://kit.fontawesome.com/58a810656e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var typeData = new Typed(".role", {
+        strings: [
+          "Full Stack Developer",
+          "Web Developer",
+          "Frontend Developer",
+          "Backend Developer",
+          "Coder",
+        ],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1000,
+      });
+    </script>
+ </body>
+ </html>
